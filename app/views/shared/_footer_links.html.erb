@@ -1,0 +1,9 @@
+<p>&copy; SwitchPlayed <%= Time.now.year %></p>
+
+<ul>
+  <li><a href="/" <%= ftr_class_if_current_page?('site', 'home') %> >home</a></li>
+  <li><a href="/about" <%= ftr_class_if_current_page?('site', 'about') %>>about</a></li>
+  <!--<li><a href="/blog"<%= ftr_class_if_current_page?('site', 'blog') %> >blog</a></li>-->
+  <li><a href="/contact"<%= ftr_class_if_current_page?('site', 'contact') %> >contact</a></li>
+  <li><a href="/faq" <%= ftr_class_if_current_page?('site', 'faq') %> class='ftr_last'>faq</a></li>
+</ul>

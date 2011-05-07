@@ -1,0 +1,16 @@
+defaults: &defaults
+  logged_exceptions_username: suttree
+  logged_exceptions_password: password
+  first_half_periods: ['0-9', '10-19', '20-29', '30-39', '40-45+']
+  second_half_periods: ['45-54', '55-64', '65-74', '75-84', '85-90+']
+  chatroom_access_cost: 1
+  chatroom_reward: 2
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

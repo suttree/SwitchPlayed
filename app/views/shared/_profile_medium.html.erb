@@ -1,0 +1,20 @@
+<% content_for :promo_alternate do %>
+  Everything there is to know about <%= current_user.name %>
+<% end %>
+
+<span class='avatar'>
+  <% if current_user.facebook_user? %>
+    <fb:profile-pic uid="<%=h current_user.facebook_uid %>" facebook-logo="true" size="thumb"></fb:profile-pic>
+  <% elsif current_user.twitter_user? %>
+    <img src='<%=h current_user.twitter_profile_image %>'/>
+  <% end %>
+</span>
+Hello <b><%=h current_user.name %></b>, from <%=h current_user.signup_source.titleize %>.
+<br/>
+<br/>
+<h5>About you</h5>
+&middot; You have <b><%= current_user.current_balance %></b> to play with, but you could <a href='/funds'>always have more</a>!
+<br/>
+&middot; You <b>last logged in</b> <%= time_ago_in_words(current_user.last_login_at) %> ago from <%= current_user.last_login_ip %>
+<br/>
+&middot; You can <%= link_to 'edit your account', edit_account_path %> or <a href='#'>change your password</a>

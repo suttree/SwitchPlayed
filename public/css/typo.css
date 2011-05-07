@@ -1,0 +1,45 @@
+/*=========================================================FAMILIIES
+*/
+body{
+font-family:"Helvetica", Arial, sans-serif;
+font-size:12px;
+}
+h1,h2,h3,h4,h5,h6 { 
+font-size:100%; 
+font-weight:normal;
+font-family:"Arial", Helvetica, sans-serif;
+} 
+/*=========================================================HEADINGS
+*/
+h1 {
+	font-size: 30px;
+}
+h2 {
+	font-size: 23px;
+}
+h3 {
+	font-size: 21px;
+}
+h4 {
+	font-size: 19px;
+}
+h5 {
+	font-size: 17px;
+}
+h6 {
+	font-size: 15px;
+}
+/*=========================================================SPACING
+*/
+ol {
+	list-style: decimal;
+}
+ul {
+	list-style: square;
+}
+li {
+	margin-left: 30px;
+}
+p,dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset {
+	margin-bottom: 10px;
+}

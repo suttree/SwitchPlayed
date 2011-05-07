@@ -1,0 +1,8 @@
+<% if bet_placed(period) %>
+  <input type='submit' value='<%= period %>' disabled='true' class='selected' />
+<% else %>
+  <%= button_to_remote period,  :url => {:controller => 'bets', :action => 'create', :game_id => Game.in_progress.id, :period => period},
+                                :method => :post,
+                                :before => "alert('Are you sure?')"
+   %>
+<% end %>

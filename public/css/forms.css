@@ -1,0 +1,78 @@
+/*==================================BLOG COMMENT FORM
+*/
+#commentform{
+}
+#commentform .submit{
+	background:#c46343;
+	color:#fff;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	text-align:center;
+	width:80px;
+	height:25px;
+	line-height:25px;
+	border:none;
+}
+#respond input{
+	height:25px;
+}
+#respond textarea{
+	width:545px;
+}
+#respond input, #respond textarea{
+	border:1px dashed #d2d2d2;
+	font-size:11px;
+	color:#505050;
+	font-family:Arial, Helvetica, sans-serif;
+}
+/*==================================CONTACT FORM
+*/
+#contact-wrapper {
+	border:1px dashed #d2d2d2;
+	background:#f7f7f7;
+	padding:10px 20px 20px 20px;
+}
+#contact-wrapper div {
+	clear:both;
+	margin:1em 0;
+}
+#contact-wrapper label {
+	display:block;
+	float:none;
+	width:auto;
+}
+form#contactform input {
+	border:1px dashed #d2d2d2;
+	font-size:11px;
+	color:#505050;
+	font-family:Arial, Helvetica, sans-serif;
+	height:25px;
+}
+form#contactform textarea {
+	border:1px dashed #d2d2d2;
+	font-size:11px;
+	color:#505050;
+	font-family:Arial, Helvetica, sans-serif; 
+	width:525px;
+}
+form#contactform .submit{
+	background:#c46343;
+	color:#fff;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	text-align:center;
+	width:80px;
+	height:25px;
+	line-height:25px;
+	border:none;
+}
+.error{
+	color:#FF0000;
+}
+.success{
+	color:#009900;
+}

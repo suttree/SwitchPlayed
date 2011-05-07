@@ -1,0 +1,17 @@
+<% form_for @game, :url => games_path, :class => 'new_game' do |form| %>
+  <%= form.error_messages%>
+
+  <%= form.label :home_team %><br />
+  <%= form.text_field :home_team %><br />
+  <br />
+  <%= form.label :away_team %><br />
+  <%= form.text_field :away_team %><br />
+  <br />
+  <%= form.label :start_time %><br />
+  <%= form.datetime_select :start_time %><br />
+  <br />
+  <%= form.label :end_time %><br />
+  <%= form.datetime_select :end_time %><br />
+  <br/>
+  <%= form.submit 'Create a new game', :disable_with => "Saving..." %>
+<% end %>

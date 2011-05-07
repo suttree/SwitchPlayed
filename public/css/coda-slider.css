@@ -1,0 +1,85 @@
+#slider {
+    width: 900px;
+    position: relative;
+}
+.scroll {
+    width: 900px;
+    overflow: hidden;
+    position: relative;
+    clear: left;
+}
+.scrollContainer{
+	width: 4340px;
+}
+.scrollContainer div.panel {
+    width: 880px;
+	float:left;
+	position:relative;
+	padding:10px;
+}
+.panel ul{
+	width:900px;
+	overflow:hidden;
+	list-style:none;
+}
+.panel ul li{
+	float:left;
+	padding:6px;
+	margin:0;
+	overflow:hidden;
+	background:url(../images/portfolioitem_bg.gif) no-repeat;
+	width:281px;
+	height:185px;
+}
+.panel ul li a{
+	float:left;
+}
+ul.navigation {
+    list-style: none;
+    margin: 0;
+	float:left;
+    padding: 12px 0;
+}
+
+ul.navigation li {
+    display: inline;
+	padding:0;
+	margin-left:10px;
+}
+
+ul.navigation a {
+    padding: 10px;
+    text-decoration: none;
+	font-weight:bold;
+	color:#505050;
+	text-transform:uppercase;
+}
+
+ul.navigation a:hover {
+    background-color: #b0027e;
+    color: #fff;
+}
+
+ul.navigation a.selected {
+    background-color: #b0027e;
+    color: #fff;
+}
+
+ul.navigation a:focus {
+    outline: none;
+}
+.scrollButtons {
+    position: absolute;
+    top: 90px;
+    cursor: pointer;
+	display:none;
+}
+.scrollButtons.left {
+	left: 3px;
+}
+.scrollButtons.right {
+	right: 0px;
+}
+.hide {
+    display: none;
+}

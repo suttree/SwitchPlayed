@@ -1,0 +1,20 @@
+<table width='100%' id='game_information'>
+  <tr>
+    <td><h5 class='alt'>Pot</td>
+    <td><h5 class='alt'>&pound;125.00</h5></td>
+  </tr><tr>
+    <td><h5 class='alt'>Multiplier</h5></td>
+    <td><h5 class='alt'>0.3</h5></td>
+  </tr><tr>
+    <td colspan='2'>&nbsp;</td>
+  </tr><tr>
+    <td><h5 class='alt'>Your balance</h5></td>
+    <td><h5 class='alt'><%= current_user.current_balance %></td>
+  </tr><tr>
+    <td colspan='2'>
+      <% if current_user.balance <= 50 %>
+        Don't forget to <a href='/funds'>fund your account</a>
+      <% end %>
+    </td>
+  </tr>
+</table>

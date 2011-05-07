@@ -1,0 +1,13 @@
+<span class='avatar'>
+  <% if current_user.facebook_user? %>
+    <fb:profile-pic uid="<%=h current_user.facebook_uid %>" facebook-logo="true" size="thumb"></fb:profile-pic>
+  <% elsif current_user.twitter_user? %>
+    <img src='<%=h current_user.twitter_profile_image %>'/>
+  <% end %>
+</span>
+Hello <b><%=h current_user.name %></b>.
+<br/>
+<br/>
+&middot; You have <b><%= current_user.current_balance %></b> to play with, woah!
+<br/>
+&middot; You can <%= link_to 'edit your account', edit_account_path %> or <a href='/funds'>deposit funds</a>.

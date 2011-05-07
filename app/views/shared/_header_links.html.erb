@@ -1,0 +1,16 @@
+<ul id="nav">
+  <% if logged_in? %>
+    <% if current_user.admin? %>
+      <li><a href="/admin" <%= hdr_class_if_current_page?('site', 'admin') %> >admin</a></li>
+      <li>_</li>
+    <% end %>
+    <li><a href="/account" <%= hdr_class_if_current_page?('users', 'show') %> >you</a></li>
+    <li><%= link_to 'logout', user_session_path, :method => :delete %></li>
+    <li>_</li>
+  <% end %>
+  <li><a href="/" <%= hdr_class_if_current_page?('site', 'home') %> >home</a></li>
+  <li><a href="/about" <%= hdr_class_if_current_page?('site', 'about') %> >about</a></li>
+  <!--<li><a href="/blog" <%= hdr_class_if_current_page?('site', 'blog') %> >blog</a></li>-->
+  <li><a href="/contact" <%= hdr_class_if_current_page?('site', 'contact') %> >contact</a></li>
+  <li><a href="/faq" <%= hdr_class_if_current_page?('site', 'faq') %> >faq</a></li>
+</ul>

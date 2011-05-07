@@ -1,0 +1,5 @@
+<% if logged_in? %>
+  <%= render :partial => 'shared/profile_small' %>
+<% else %>
+  <%= render :partial => 'shared/connect' %>
+<% end %>

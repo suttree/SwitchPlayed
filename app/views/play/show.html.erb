@@ -1,0 +1,12 @@
+<% content_for :promo_alternate do %>
+  <%= Game.in_progress.home_team.titleize %> vs <%= Game.in_progress.away_team.titleize %>, <%= Game.in_progress.start_time.to_date.to_s(:weekday_month_ordinal) %>
+  <br/>
+<% end %>
+
+<h3>Predict the correct window of any goal to win!</h3>
+
+<hr/>
+
+<div id='bets'>
+  <%= render :partial => 'play/bets' %>
+</div>

@@ -1,0 +1,13 @@
+<% content_for :promo_alternate do %>
+  Secret admin interface for adding &amp; editing Users!
+<% end %>
+
+<h1>Listing all users</h1>
+
+<ul class='users_list'>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.name %>, <%= user.signup_source.titleize %>, <%= user.created_at.to_date.to_s(:date_short) %>
+    </li>
+  <% end %>
+</ul>

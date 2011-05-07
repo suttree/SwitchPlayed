@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Real-time football betting at SwitchPlayed</title>
+    <%= render :partial => 'shared/header_css' %>
+    <%= render :partial => 'shared/header_javascript' %>
+  </head>
+  <body>
+    <%= render :partial => 'shared/facebook_connect_scripts' %>
+    <div id="wrap">
+          <div id="header">
+            <h1><a href="/">SwitchPlayed</a></h1>
+            <%= render :partial => 'shared/header_links' %>
+          </div>
+          
+          <%= render :partial => 'shared/flash', :locals => {:flash => flash} %>
+          
+        <div id="secondbanner">
+              <div id="second_rainbow"></div>
+              <div class="statement">
+                  <h1 class="promo">
+                    <% default_content_for :promo_alternate do %>
+                      <%= render :partial => 'shared/promo_alternate' %>
+                    <% end %>
+                  </h1>
+              </div>
+        </div>
+            <div id="main_secondary">
+                  <div id="content">
+                  <div class="content_top"> </div>
+                  <div class="content_body">
+                    <%= yield %>
+                  </div>
+                  <div class="content_bottom"> </div>
+                  </div>
+                  <div id="sidebar">
+                  <div class="sidebar_top"> </div>
+                  <div class="sidebar_body">
+                    <% default_content_for :sidebar do %>
+                      <h4>Other places to go</h4>
+                      <ul>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="http://www.facebook.com/suttree">Facebook group</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/transactions">Transactions</a></li>
+                        <li><a href="http://www.twitter.com/suttree">Twitter page</a></li>
+                      </ul>
+                    <% end %>
+                  </div>
+                  <div class="sidebar_bottom"></div>
+                  </div>
+            </div>
+            <div id="footer">
+            <div class="ftrcontent">
+              <%= render :partial => 'shared/footer_links' %>
+            </div>
+          </div>
+      </div>
+  </body>
+</html>

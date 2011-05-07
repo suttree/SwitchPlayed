@@ -1,0 +1,12 @@
+<% content_for :promo_alternate do %>
+  Administering the game
+<% end %>
+
+<h1>Keys to the castle</h1>
+
+<% if current_user.admin? %>
+  <ul class="admin_list">
+    <li><a href="/games" <%= hdr_class_if_current_page?('games', 'index') %> >Games</a></li>
+    <li><a href="/users" <%= hdr_class_if_current_page?('users', 'index') %> >Users</a></li>
+  </ul>
+<% end %>

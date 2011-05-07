@@ -1,0 +1,27 @@
+== todo ==
+  Upload this to bee and show it to Pete.
+  Tidy up game-related view pages?
+  Add attr_accessible lines to all models!
+  Rake script for juggernaut and daemons
+  Index the database!
+- refactor debitor? create a row in activity for each minute bills & present in the game
+                    make it able to pick up where it left off, in case the daemon crashes
+
+
+== Juggernaut todo ==
+  Implement this rake tasks - http://github.com/nesquena/cap-recipes/blob/72c8409fa84fff75e44a841cc43f202b439decc1/lib/cap_recipes/tasks/juggernaut/manage.rb
+  Log all chat
+    text files is great, can rotat, backup, etc
+    doesn't need much extra code written either
+  Log connections and disconnections
+    can use juggernaut callbacks and store in the db
+    log to date+time+game-stamped database table as per Artur!
+    clear relevant session data when a user logs out/disconnects
+
+
+== Payments & Audit Trails ==
+  Use ActiveMerchant
+  Use Invoicing - http://ept.github.com/invoicing/
+  Use Spreedly - http://spreedly.com/
+  Use Saasy
+  Setup SSL

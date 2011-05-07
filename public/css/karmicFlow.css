@@ -1,0 +1,56 @@
+.karmic_flow_container {
+	overflow: hidden; 
+	position: relative;
+	height: 400px;
+}
+
+.karmic_flow_slider, .karmic_flow_slider li {
+	list-style:none;
+	margin: 0;
+	padding: 0;
+}
+.karmic_flow_slider, .karmic_flow_slider li p{
+}
+
+.karmic_flow_slider {
+	overflow: hidden; 
+	position: relative;
+	
+	/* optional */
+	margin-left: 0;
+}
+
+.karmic_flow_slider li {
+	float: left;
+	position: relative;
+	overflow:hidden;
+}
+
+.karmic_flow_slide_overflow {
+	/* optional */
+	/*overflow:auto;*/
+}
+
+.karmic_flow_sliding .karmic_flow_slide_overflow {
+	overflow:hidden;
+}
+
+.karmic_flow_sliding object, .karmic_flow_sliding embed {
+	display: none;
+}
+
+.karmic_flow_controller_selected {
+	/* optional */
+	background: #FFF !important;
+	color: #663300 !important;
+	padding: 7px 10px !important;
+}
+
+.karmic_flow_controller {
+	/* optional */
+	background: #333;
+	color: #3399CC;
+	padding: 5px 10px;
+	line-height: 25px;
+	text-decoration: none;
+}

@@ -1,0 +1,11 @@
+<% form_for @game.score, :url => game_score_path(@game), :class => 'new_game' do |form| %>
+  <%= form.error_messages%>
+
+  <%= form.label @game.home_team %><br />
+  <%= form.text_field :home_team, :size => 3 %><br />
+  <br />
+  <%= form.label @game.away_team %><br />
+  <%= form.text_field :away_team, :size => 3 %><br />
+  <br />
+  <%= form.submit 'Update score', :disable_with => "Updating..." %>
+<% end %>

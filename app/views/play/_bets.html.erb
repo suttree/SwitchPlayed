@@ -1,0 +1,27 @@
+  <%= render :partial => 'shared/flash', :locals => {:flash => flash} %>
+  <form class='buy_time'>
+    <h5>First half minutes</h5>
+    <% Settings.first_half_periods.each do |period| %>
+      <%= render :partial => 'play/bet_buttons', :locals => {:period => period} %>
+    <% end %>
+
+    <br/>
+    <br/>
+
+    <h5>Second half minutes</h5>
+    <% Settings.second_half_periods.each do |period| %>
+      <%= render :partial => 'play/bet_buttons', :locals => {:period => period} %>
+    <% end %>
+  </form>
+
+  <br/>
+  <br/>
+
+  <h3>Vital statistics</h3>
+  So far, there are no goals scored in this game.
+
+  <% content_for :sidebar do %>
+    <h4>Game information</h4>
+    <hr/>
+    <%= render :partial => 'play/game_information' %>
+  <% end %>

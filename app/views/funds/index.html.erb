@@ -1,0 +1,33 @@
+<h1>Fund your account</h1>
+
+<form action='/funds' method='post'>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <table>
+    <th>
+      &nbsp;
+    </th>
+    <tr>
+      <td>
+        <h5 class='alt'>The Starter Kit</h5>
+      </td><td>
+        <input type='submit' name='fund_amount' value='5.00'>
+      </td>
+    </tr><tr>
+      <td>
+        <h5 class='alt'>The Safest Bet</h5>
+      </td><td>
+        <input type='submit' name='fund_amount' value='10.00'>
+      </td>
+    </tr><tr>
+      <td>
+        <h5 class='alt'>The Four-Three Thriller</h5>
+      </td><td>
+        <input type='submit' name='fund_amount' value='25.00'>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<br/>
+
+<h3>You current balance is <b><%= current_user.current_balance %></b></h3>

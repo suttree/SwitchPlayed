@@ -1,0 +1,58 @@
+<% content_for :promo_alternate do %>
+  <%= Game.in_progress.home_team.titleize %> vs <%= Game.in_progress.away_team.titleize %>, <%= Game.in_progress.start_time.to_date.to_s(:weekday_month_ordinal) %>
+  <div class='timers'>
+    <%= render :partial => 'presence_timer', :locals => {:difference => 0} %>
+  </div>
+  <%= periodically_call_remote(:url => {:controller => :play, :action => :update_page}, :frequency => '60') %>
+<% end %>
+
+<h3>Stay in this room until a goal is scored to win!</h3>
+
+<hr/>
+
+<%= javascript_include_tag :defaults, :juggernaut %>
+<%= juggernaut(:client_id => session['user_credentials_id'], :session_id => session['user_credentials']) %>
+
+<%= form_remote_tag(
+      :url => { :controller => :chat, :action => :send_data },
+      :complete => "$('chat_input').value = ''" ) %>
+  <%= text_field_tag( 'chat_input', '', { :size => 70, :id => 'chat_input'} ) %>
+  <%#= submit_tag "Submit" %>
+</form>
+
+<ul id="chat_data" class="chat_data"> </ul>
+
+<% content_for :sidebar do %>
+  <h4>Game information</h4>
+  <hr/>
+  <table width='100%' id='game_information'>
+    <tr>
+      <td><h5 class='alt'>Score</h5></td>
+      <td><h5 class='alt'>
+        <%= render :partial => 'score' %>
+      </td>
+    </tr><tr>
+      <td><h5 class='alt'>Your balance</h5></td>
+      <td><h5 class='alt'>
+        <%= render :partial => 'user_balance' %>
+      </td>
+    </tr><tr>
+      <td colspan='2'>
+        <% if current_user.admin? %>
+          &middot; You can <%= link_to 'edit this game', game_path(@game) %>
+        <% end %>
+        <% if current_user.balance <= 50 %>
+          <br/>
+          &middot; Don't forget to <a href='/funds'>fund your account</a>
+        <% end %>
+      </td>
+    </tr><tr>
+      <td colspan='2'>
+        <div class='quit_game'>
+          <br/>
+          <%= link_to "<h3>Quit game?</h3>", root_path, :confirm => "Are you sure you want to leave?" %>
+        </div>
+      </td>
+    </tr>
+  </table>
+<% end %>

@@ -1,0 +1,6 @@
+<% form_tag({:controller => 'users', :action => 'create'}, {:method => 'post'}) do %>
+  <%#= oauth_register_button :value => 'Sign In with Twitter' %>
+  <input type='image' src='/images/twitter.png' value='Sign In with Twitter' name='register_with_oauth' id='user_submit' class=''/>
+<% end %>
+
+<%= authlogic_facebook_login_button :length => 'long', :size => 'large' %>

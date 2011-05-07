@@ -1,0 +1,24 @@
+<% content_for :promo_alternate do %>
+  Secret admin interface for adding &amp; editing Games!
+<% end %>
+
+<h1>Listing all games</h1>
+
+<ul class='games_list'>
+  <% @games.each do |game| %>
+    <li>
+    <%= game.home_team.titleize %> vs <%= game.away_team.titleize %> <i>(<%= game.pip %>)</i> - <%= game.start_time.to_s :date_with_time %> - <%= game.end_time.to_s :time_without_date %>
+      <%= link_to 'Edit', edit_game_path(game) %> |
+      <%= link_to 'Score', edit_game_score_path(game) %>
+    </li>
+  <% end %>
+</ul>
+
+<% if @games.empty? %>
+  No games to display
+<% end %>
+
+<hr/>
+
+<h2>New game</h2>
+<%= render :partial => 'new_game' %>

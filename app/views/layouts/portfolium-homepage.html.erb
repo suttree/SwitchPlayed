@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Real-time football betting at SwitchPlayed</title>
+    <%= render :partial => 'shared/header_css' %>
+    <%= render :partial => 'shared/header_javascript' %>
+  </head>
+  <body>
+    <%= render :partial => 'shared/facebook_connect_scripts' %>
+    <div id="wrap">
+
+          <div id="header">
+            <h1><a href="/">SwitchPlayed</a></h1>
+            <%= render :partial => 'shared/header_links' %>
+          </div>
+
+          <%= render :partial => 'shared/flash', :locals => {:flash => flash} %>
+
+          <div id="homebanner">
+              <div id="portfolium_rainbow"></div>
+              <div class="statement">
+                  <h1>Welcome <%=h current_user.name if logged_in? %></h1>
+                  <% if logged_in? %>
+                    <p>
+                      <% default_content_for :profile_small do %>
+                        <%= render :partial => 'shared/profile_small' %>
+                      <% end %>
+                    </p>
+                  <% else %>
+                    <p>
+                      <b>Real-time football betting</b> - lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <span class='connect'>
+                      <%= render :partial => 'shared/connect' %>
+                    </span>
+                  <% end %>
+              </div>
+
+            <div id="container" class="karmic_flow_container">
+              <ul class="karmic_flow_slider">
+                <li class="karmic_flow_slides karmic_flow_slide_selected">
+                  <img src="/images/football-3.jpg" alt="" />
+                </li>
+              </ul>
+            </div>
+            <div id="controllers">
+              <p class="quote">
+                - The Curious Case of Sir Ryan Giggs
+                &nbsp;&nbsp;
+              </p>
+            </div>
+
+        </div>
+          <div id="main">
+            <div id="full_page">
+                <div class="full_top"> </div>
+                <div class="full_body">
+                  <% if logged_in? and Game.in_progress? %>
+                    <h2 class="promo"><%= Game.in_progress.home_team.titleize %> vs <%= Game.in_progress.away_team.titleize %> (<%= Game.in_progress.current_score %>)</h2>
+                    <a href="/play/<%= Game.in_progress.pip %>/test" class="promo_button" title="Play now"><h3>Play now!</h3></a>
+                  <% elsif logged_in? %>
+                    <h2 class="promo"><%= Game.upcoming_details %>, <%= Game.upcoming_date %></h2>
+                    <a href="/funds" class="promo_button" title="Get ready"><h3>Get ready!</h3></a>
+                  <% else %>
+                    <h2 class="promo">Real-time Football Betting ~ Win with every goal!</h2>
+                    <a href="/faq" class="promo_button" title="How to play"><h3>How to play</h3></a>
+                  <% end %>
+                </div>
+                <div class="full_bottom"> </div>
+              </div>
+              <div id="content">
+                <div class="content_top"> </div>
+                <div class="content_body">
+                  <% if logged_in? %>
+                    <%= render :partial => 'shared/homepage_latest_news' %>
+                  <% else %>
+                    <%= render :partial => 'shared/homepage_about_us' %>
+                  <% end %>
+                </div>
+                  <div class="content_bottom"> </div>
+              </div>
+              <div id="sidebar">
+                <div class="sidebar_top"> </div>
+                  <div class="sidebar_body">
+                    <h3>From the blog</h3>
+                        <div>
+                             <p><strong>This is the blog title</strong><br />
+                                 <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em> <a href="portfolio_entry.html" title="Read more">read more &raquo;</a>                          </p>
+                    </div>
+                         <div>
+                             <p><strong>This is the blog title</strong><br />
+                                 <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em> <a href="portfolio_entry.html" title="Read more">read more &raquo;</a>                          </p>
+                    </div>
+                         <div>
+                             <p><strong>This is the blog title</strong><br />
+                                 <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em> <a href="portfolio_entry.html" title="Read more">read more &raquo;</a>                          </p>
+                    </div>
+                  </div>
+                  <div class="sidebar_bottom"> </div>
+              </div>
+          </div>
+        <div id="footer">
+            <div class="ftrcontent">
+                <%= render :partial => 'shared/footer_links' %>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
